@@ -1,0 +1,13 @@
+%% Read files from a dir
+
+file_dir = 'dataset/';
+file_names = dir(strcat(file_dir,'*.raw'));
+disp(file_names);
+is_rgbnir=true;
+if is_rgbnir
+   [nir, rgbn] =  open_raw(file_names(1).name,is_rgbnir);
+else
+    [nir,rgb] = open_raw(file_names(2).name, is_rgbnir);
+    
+
+end
