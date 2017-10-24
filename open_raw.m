@@ -9,8 +9,6 @@ function [nir,rgbn]=open_raw(file_name, is_rgbn)
     I = I';
 
     %Convert from range [0, 1023] range [0, 1] (working in double image format).
-%     I = I/(2^10-1);
-%     I = I/max(max(I));  % normalization [0,1]
     I = ((I-min(min(I)))*1)/(max(max(I))-min(min(I)));
     
     if is_rgbn
