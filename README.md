@@ -6,4 +6,3 @@ To using the code, we have two raw images:
 	TE3-RGB-15_31-495.raw  <- rgb image
 	TE3-RGBN-15_31-495.raw  <- the same scenario as before but with nir infection in the RGB channels
 
-## Sorry for any inconvenience, we will update the repo with the code shortly
