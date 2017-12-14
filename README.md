@@ -1,4 +1,4 @@
-# rawImage_extractor
+# rawImage_extractor Bayer pattern = BGGR or BGNR, N=Near Infrared
 It is a Matlab code for extracting information from RAW image files. Such raw data are extracted without any post image processing, 
 to do so, we can find a good help [here](https://stackoverflow.com/questions/39623001/how-can-i-read-10-bit-raw-image-which-contain-rgb-ir-data)
 To using the code, we have two raw images:
