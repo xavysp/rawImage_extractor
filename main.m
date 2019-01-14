@@ -3,8 +3,8 @@
 clear all;
 
 % set the following data:
-file_type = 'raw'; % [raw or h5]
-is_multispectral=false; %true when the data has NIR or false if it is just RGB
+file_type = 'h5'; % [raw or h5]
+is_multispectral=true; %true when the data has NIR or false if it is just RGB
 file_dir = 'dataset/'; % The four files are into dataset dir so leave as setted
 % *** For the multispectral option just add N to RGB like 
 % if is_multispectral true  in the *_file_names "RGBN" ***
@@ -43,7 +43,7 @@ else
     pause;
     
 end
-
+% imwrite(rgb,'dataset/RGB.png');
 return;
 
 %% Reading the dataset saved in mat files
