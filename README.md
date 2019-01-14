@@ -17,10 +17,12 @@ To use the code, we have two raw and h5 images in 'dataset' folder:
 <div align='center'>
 <img src="dataset/RGB.png" width="800"/>
 </div>
+
 ### RGB+NIR
 <div align='center'>
 <img src="dataset/RGBN.png" width="800"/>
 </div>
+
 ### NIR
 <div align='center'>
 <img src="dataset/NIR.png" width="800"/>
