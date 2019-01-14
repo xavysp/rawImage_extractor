@@ -12,6 +12,20 @@ To use the code, we have two raw and h5 images in 'dataset' folder:
 		RGBNC_296.h5
 		RGBR_296.h5 (those h5 data are registered)
 
+## Visualization
+### RGB
+<div align='center'>
+<img src="dataset/RGB.png" width="800"/>
+</div>
+### RGB+NIR
+<div align='center'>
+<img src="dataset/RGBN.png" width="800"/>
+</div>
+### NIR
+<div align='center'>
+<img src="dataset/NIR.png" width="800"/>
+</div>
+
 The entire dataset will be found in [updated OMSIV](https://xavysp.github.io/ssmid-dataset/)
 	
 
