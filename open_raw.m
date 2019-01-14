@@ -1,13 +1,13 @@
 % function for RGB and NIR image extraction from a RAW image file
 
-function [nir,rgbn]=open_raw(file_name, is_rgbn)
+function rgbn=open_raw(file_name, is_rgbn)
     % camera configuration
     
     width = 1280;
     height= 720;
     
     f= fopen(file_name, 'r');
-    I = fread(f, [width,height], 'uint16');
+    I = fread(f, [width, height], 'uint16');
     fclose(f);
     I = I';
 
@@ -23,7 +23,6 @@ function [nir,rgbn]=open_raw(file_name, is_rgbn)
 %         B = I(1:2:end, 1:2:end);
 %         G = I(1:2:end, 2:2:end);
 %         R = I(2:2:end, 2:2:end);
-        nir = I(2:2:end, 1:2:end);
     else
         rgbn = zeros(height/2,width/2,3);
         rgbn(:,:,3) = I(1:2:end, 1:2:end);
@@ -32,6 +31,5 @@ function [nir,rgbn]=open_raw(file_name, is_rgbn)
 %         B = I(1:2:end, 1:2:end);
 %         G = I(1:2:end, 2:2:end);
 %         R = I(2:2:end, 2:2:end);
-        nir = 'there is no nir';
     end
 end

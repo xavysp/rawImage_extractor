@@ -3,21 +3,16 @@
 clear all;
 
 % set the following data:
-file_type = 'raw'; % [raw or h5]
+file_type = 'h5'; % [raw or h5]
 is_multispectral=false; %true when the data has NIR or false if it is just RGB
 file_dir = 'dataset/'; % The four files are into dataset dir so leave as setted
 % *** For the multispectral option just add N to RGB like 
 % if is_multispectral true  in the *_file_names "RGBN" ***
 
-if is_multispectral
-    raw_file_name = 'TE3-RGBN-14_22-383.raw'; % into the dataset dir you will find 2 h5 files,
-    % choice one of them and put it here
-    h5_file_name ='RGBNC_296.h5'; % into the dataset dir you will 
-    % find 2 raw files, choice one of them and put it here
-else
-    h5_file_name ='RGBR_296.h5';
-    raw_file_name='TE3-RGB-14_22-383.raw';
-end
+raw_file_name='TE3-RGB-14_22-383.raw'; % into the dataset dir you will find 2 h5 files,
+% choice one of them and put it here
+h5_file_name ='RGB_296.h5'; % into the dataset dir you will 
+% find 2 raw files, choice one of them and put it here
 
 if strcmp(file_type,'raw')
     file_path = strcat(file_dir,raw_file_name);
@@ -31,14 +26,11 @@ end
 
 [nir, rgb] = visualization_mat(rgbn,is_multispectral);
 if is_multispectral
-    disp(file_path);
     imshow(rgb) 
     figure;
     imshow(nir)
     pause;
 else
-    disp(file_path)
-%     figure;
     imshow(rgb);
     pause;
     
