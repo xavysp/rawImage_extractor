@@ -1,20 +1,27 @@
 %% Reading RAW images
 clear all;
-
+file_type = 'raw'; % [raw or h5]
+is_multispectral=true;
 file_dir = 'dataset/';
-file_names = dir(strcat(file_dir,'*.raw'));
-disp(size(file_names,1));
-disp('files found');
-is_rgbnir=true;
-if is_rgbnir
-   [nir, rgbn] =  open_raw(strcat(file_dir,file_names(2).name),is_rgbnir);
+
+if strcmp(file_type,'raw')
+    raw_files = dir(strcat(file_dir,'*.raw'));
+    disp(size(raw_files,1));
+    disp('files found');
+    
+    if is_multispectral
+        
+        [nir, rgbn] =  open_raw(strcat(file_dir,file_names(2).name),is_rgbnir);
+    else
+        [nir,rgb] = open_raw(strcat(file_dir,file_names(1).name), is_rgbnir);
+    end
+else
+    h5_files = dir(strcat(file_dir,'*.h5'));
+    disp(size(h5_files,1));
+    disp('files found');
 end
-imshow(uint8(rgbn(:,:,1:3).*255))
-pause;
 
-is_rgbnir=false;
-
-if ~is_rgbnir
+if ~is_multispectral
     [nir,rgb] = open_raw(strcat(file_dir,file_names(1).name), is_rgbnir);
 end
 figure;

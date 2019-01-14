@@ -1,5 +1,8 @@
+% function for RGB and NIR image extraction from a RAW image file
+
 function [nir,rgbn]=open_raw(file_name, is_rgbn)
     % camera configuration
+    
     width = 1280;
     height= 720;
     
