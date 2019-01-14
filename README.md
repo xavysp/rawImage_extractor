@@ -12,7 +12,7 @@ To use the code, we have two raw and h5 images in 'dataset' folder:
 		RGBNC_296.h5
 		RGBR_296.h5 (those h5 data are registered)
 
-## Visualization
+## H5 files Visualization
 ### RGB
 <div align='center'>
 <img src="dataset/RGB.png" width="800"/>
